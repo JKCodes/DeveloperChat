@@ -18,6 +18,15 @@ class AuthService {
         return _instance
     }
     
+    func logout() {
+        do {
+            try FIRAuth.auth()?.signOut()
+            print("MOR: User has been logged out successfully")
+        } catch {
+            print("MOR: An Error occurred while signing out the user")
+        }
+    }
+    
     func login(email: String, password: String, onComplete: Completion?) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil  {
@@ -45,14 +54,15 @@ class AuthService {
                                 }
                             }
                         })
+                    } else {
+                        // Handle all other errors
+                        self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
                     }
-                } else {
-                    // Handle all other errors
-                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
                 }
             } else {
                 // Successfully Logged in - without creating an account
                 onComplete?(nil, user)
+                print("MOR: User was logged in successfully")
                 
             }
         })

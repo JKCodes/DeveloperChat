@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 
 class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -102,7 +103,12 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    @IBAction func sendPRBtnPressed(sender: AnyObject) {
+    
+    @IBAction func cancelBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func sendPRBtnPressed(_ sender: Any) {
         if let url = _videoURL {
             let videoName = "\(NSUUID().uuidString)\(url)"
             let ref = DataService.instance.videoStorageRef.child(videoName)
@@ -110,14 +116,17 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let _ = ref.putFile(url, metadata: nil, completion: { (meta: FIRStorageMetadata?, err: Error?) in
                 
                 if err != nil {
-                    print("Error uploading video: \(err?.localizedDescription)")
+                    print("MOR: Error uploading video: \(err?.localizedDescription)")
                 } else {
                     let downloadURL = meta!.downloadURL()
+                    
+                    // This currently sends to all users in database...
+                    DataService.instance.sendMediaPullRequest(senderUID: (FIRAuth.auth()?.currentUser?.uid)!, sendingTo: self.selectedUsers, mediaURL: downloadURL!, textSnippet: "Coding today was LEGIT!")
                     print("Download URL: \(downloadURL)")
                     // Save this somewhere
-                    self.dismiss(animated: true, completion: nil)
                 }
             })
+            self.dismiss(animated: true, completion: nil)
         } else if let snap = _snapData {
             let snapName = "\(NSUUID().uuidString).jpg"
             let ref = DataService.instance.imagesStorageRef.child(snapName)
@@ -125,13 +134,13 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let _ = ref.put(snap, metadata: nil, completion: { (meta: FIRStorageMetadata?,err: Error?) in
                 
                 if err != nil {
-                    print("Error uploading snap: \(err?.localizedDescription)")
+                    print("MOR: Error uploading snap: \(err?.localizedDescription)")
                 } else {
                     let downloadURL = meta!.downloadURL()
-                    print("Download URL: \(downloadURL)")
-                    self.dismiss(animated: true, completion: nil)
+                    print("MOR: Download URL: \(downloadURL)")
                 }
             })
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }

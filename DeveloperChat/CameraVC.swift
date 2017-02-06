@@ -27,24 +27,29 @@ class CamaraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-//        performSegue(withIdentifier: "LoginVC", sender: nil)
-        
-        guard FIRAuth.auth()?.currentUser != nil else {
-            performSegue(withIdentifier: "LoginVC", sender: nil)
-            return
-        }
+          isUserLoggedIn()
     }
 
     @IBAction func changeCameraBtnPressed(_ sender: Any) {
         changeCamera()
     }
     
-    
     @IBAction func recordBtnPressed(_ sender: Any) {
         toggleMovieRecording()
     }
     
+    @IBAction func logoutBtnPressed(_ sender: Any) {
+        AuthService.instance.logout()
+        isUserLoggedIn()
+    }
+    
+    func isUserLoggedIn() {
+        guard FIRAuth.auth()?.currentUser != nil else {
+            performSegue(withIdentifier: "LoginVC", sender: nil)
+            print("MOR: User was not logged in. Displaying login screen")
+            return
+        }
+    }
     
     func shouldEnableCameraUI(_ enable: Bool) {
         cameraBtn.isEnabled = enable

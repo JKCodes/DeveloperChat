@@ -11,7 +11,6 @@ import UIKit
 class LoginVC: UIViewController {
 
     @IBOutlet weak var emailField: RoundTextField!
-    
     @IBOutlet weak var passwordField: RoundTextField!
     
     override func viewDidLoad() {
