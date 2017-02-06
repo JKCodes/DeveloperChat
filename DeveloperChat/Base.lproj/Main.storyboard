@@ -64,15 +64,16 @@
                         <outlet property="cameraBtn" destination="ygJ-03-rFN" id="cEa-uJ-0Hw"/>
                         <outlet property="previewView" destination="Jra-vW-yPx" id="QHP-u3-3vf"/>
                         <outlet property="recordBtn" destination="7bV-Pt-Rur" id="g4d-BG-Bxk"/>
+                        <segue destination="VAP-BG-xUO" kind="presentation" identifier="LoginVC" id="mHt-dS-yPE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="Qb8-md-udc">
             <objects>
-                <viewController id="VAP-BG-xUO" sceneMemberID="viewController">
+                <viewController id="VAP-BG-xUO" customClass="LoginVC" customModule="DeveloperChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T07-pb-qnv"/>
                         <viewControllerLayoutGuide type="bottom" id="Gzz-4V-iib"/>

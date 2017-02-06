@@ -18,6 +18,7 @@
 		D8A2BC571E48AEA7003DA674 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8A2BC561E48AEA7003DA674 /* GoogleService-Info.plist */; };
 		D8A2BC591E48B70D003DA674 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2BC581E48B70D003DA674 /* RoundTextField.swift */; };
 		D8A2BC5B1E48BB99003DA674 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2BC5A1E48BB99003DA674 /* RoundedButton.swift */; };
+		D8A2BC5D1E48C6BF003DA674 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2BC5C1E48C6BF003DA674 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D8A2BC561E48AEA7003DA674 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8A2BC581E48B70D003DA674 /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		D8A2BC5A1E48BB99003DA674 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		D8A2BC5C1E48C6BF003DA674 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				D8A2BC4C1E476458003DA674 /* AAPLCameraViewController.h */,
 				D8A2BC4D1E476458003DA674 /* AAPLCameraViewController.m */,
 				D85232A01E46644800E3325D /* CameraVC.swift */,
+				D8A2BC5C1E48C6BF003DA674 /* LoginVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				D85232A11E46644800E3325D /* CameraVC.swift in Sources */,
 				D8A2BC5B1E48BB99003DA674 /* RoundedButton.swift in Sources */,
+				D8A2BC5D1E48C6BF003DA674 /* LoginVC.swift in Sources */,
 				D852329F1E46644800E3325D /* AppDelegate.swift in Sources */,
 				D8A2BC591E48B70D003DA674 /* RoundTextField.swift in Sources */,
 				D8A2BC501E476458003DA674 /* AAPLCameraViewController.m in Sources */,
