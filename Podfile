@@ -8,6 +8,7 @@ target 'DeveloperChat' do
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   # Pods for DeveloperChat
 
 end

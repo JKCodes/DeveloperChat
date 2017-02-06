@@ -27,10 +27,13 @@ class CamaraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        guard FIRAuth.auth()?.currentUser != nil else {
-            performSegue(withIdentifier: "LoginVC", sender: nil)
-            return
-        }
+        
+        performSegue(withIdentifier: "LoginVC", sender: nil)
+        
+//        guard FIRAuth.auth()?.currentUser != nil else {
+//            performSegue(withIdentifier: "LoginVC", sender: nil)
+//            return
+//        }
     }
 
     @IBAction func changeCameraBtnPressed(_ sender: Any) {

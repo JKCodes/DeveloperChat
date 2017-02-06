@@ -20,6 +20,7 @@
 		D8A2BC5B1E48BB99003DA674 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2BC5A1E48BB99003DA674 /* RoundedButton.swift */; };
 		D8A2BC5D1E48C6BF003DA674 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2BC5C1E48C6BF003DA674 /* LoginVC.swift */; };
 		D8A2BC611E48C987003DA674 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2BC601E48C987003DA674 /* AuthService.swift */; };
+		D8A2BC631E48D346003DA674 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2BC621E48D346003DA674 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D8A2BC5A1E48BB99003DA674 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D8A2BC5C1E48C6BF003DA674 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D8A2BC601E48C987003DA674 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D8A2BC621E48D346003DA674 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				D8A2BC601E48C987003DA674 /* AuthService.swift */,
+				D8A2BC621E48D346003DA674 /* DataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A2BC631E48D346003DA674 /* DataService.swift in Sources */,
 				D85232A11E46644800E3325D /* CameraVC.swift in Sources */,
 				D8A2BC5B1E48BB99003DA674 /* RoundedButton.swift in Sources */,
 				D8A2BC5D1E48C6BF003DA674 /* LoginVC.swift in Sources */,
