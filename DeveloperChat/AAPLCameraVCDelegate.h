@@ -16,6 +16,10 @@
 -(void)shouldEnableCameraUI:(BOOL)enable;
 -(void)recordingHasStarted;
 -(void)canStartRecording;
+-(void)videoRecordingFailed;
+-(void)snapshotFailed;
+-(void)snapshotTaken:(NSData*)imageData;
+-(void)videoRecordingComplete:(NSURL *)outputFileURL;
 
 @end
 

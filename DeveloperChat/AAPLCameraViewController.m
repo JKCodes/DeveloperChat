@@ -750,6 +750,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 
 + (AVCaptureDevice *)deviceWithMediaType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position
 {
+    //NSArray *devices = [AVCaptureDevice ]
 	NSArray *devices = [AVCaptureDevice devicesWithMediaType:mediaType];
 	AVCaptureDevice *captureDevice = devices.firstObject;
 

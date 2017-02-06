@@ -51,5 +51,22 @@ class CamaraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     func canStartRecording() {
         print("Can start recording")
     }
+    
+    func videoRecordingFailed() {
+        print("Video Recording Failed")
+    }
+    
+    func snapshotFailed() {
+        print("Snapshot Failed")
+    }
+    
+    
+    func snapshotTaken(_ imageData: Data!) {
+        print("snapshot Takaen \(imageData)")
+    }
+    
+    func videoRecordingComplete(_ outputFileURL: URL!) {
+        print("Video Recording Complete \(outputFileURL)")
+    }
 }
 
