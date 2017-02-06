@@ -28,12 +28,12 @@ class CamaraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        performSegue(withIdentifier: "LoginVC", sender: nil)
+//        performSegue(withIdentifier: "LoginVC", sender: nil)
         
-//        guard FIRAuth.auth()?.currentUser != nil else {
-//            performSegue(withIdentifier: "LoginVC", sender: nil)
-//            return
-//        }
+        guard FIRAuth.auth()?.currentUser != nil else {
+            performSegue(withIdentifier: "LoginVC", sender: nil)
+            return
+        }
     }
 
     @IBAction func changeCameraBtnPressed(_ sender: Any) {
@@ -44,6 +44,7 @@ class CamaraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     @IBAction func recordBtnPressed(_ sender: Any) {
         toggleMovieRecording()
     }
+    
     
     func shouldEnableCameraUI(_ enable: Bool) {
         cameraBtn.isEnabled = enable
@@ -67,17 +68,30 @@ class CamaraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
         print("Video Recording Failed")
     }
     
+    func videoRecordingComplete(_ videoURL: URL!) {
+        performSegue(withIdentifier: "UsersVC", sender: ["videoURL":videoURL])
+    }
+    
     func snapshotFailed() {
         print("Snapshot Failed")
     }
     
     
-    func snapshotTaken(_ imageData: Data!) {
-        print("snapshot Takaen \(imageData)")
+    func snapshotTaken(_ snapshotData: Data!) {
+        performSegue(withIdentifier: "UsersVC", sender: [snapshotData: snapshotData])
     }
     
-    func videoRecordingComplete(_ outputFileURL: URL!) {
-        print("Video Recording Complete \(outputFileURL)")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let usersVC = segue.destination as? UsersVC {
+            if let videoDict = sender as? Dictionary<String, URL> {
+                let url = videoDict["videoURL"]
+                usersVC.videoURL = url
+            } else if let snapDict = sender as? Dictionary<String, Data> {
+                let snapData = snapDict["snapshotData"]
+                usersVC.snapData = snapData
+            }
+        }
     }
+    
 }
 
