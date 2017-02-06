@@ -29,6 +29,7 @@
 		D8A2BC4D1E476458003DA674 /* AAPLCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCameraViewController.m; sourceTree = "<group>"; };
 		D8A2BC4E1E476458003DA674 /* AAPLPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLPreviewView.h; sourceTree = "<group>"; };
 		D8A2BC4F1E476458003DA674 /* AAPLPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLPreviewView.m; sourceTree = "<group>"; };
+		D8A2BC551E481EC8003DA674 /* AAPLCameraVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraVCDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 		D852329D1E46644800E3325D /* DeveloperChat */ = {
 			isa = PBXGroup;
 			children = (
+				D8A2BC521E481DB3003DA674 /* Protocols */,
 				D85232B71E46728B00E3325D /* View */,
 				D85232B61E46728100E3325D /* Controller */,
 				D852329E1E46644800E3325D /* AppDelegate.swift */,
@@ -90,6 +92,14 @@
 				D8A2BC4F1E476458003DA674 /* AAPLPreviewView.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		D8A2BC521E481DB3003DA674 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D8A2BC551E481EC8003DA674 /* AAPLCameraVCDelegate.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
